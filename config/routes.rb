@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "books#index"
+
+  get "sessions", to: "sessions#sign"
+  post "sessions", to: "sessions#enter"
 end
