@@ -23,7 +23,22 @@
                 <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </ul>
-        <%= button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0" %>
-        <%= button_to "Entrar", "/sessions", method: :get, class: "btn btn-outline-primary my-2 my-lg-0" %>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if Current.user %>
+                <li class="nav-item">
+                    <%= button_to Current.user.email, "/users/Current.user.id", method: :get, class: "btn btn-link my-2 my-lg-0" %>
+                </li>
+                <li class="nav-item">
+                    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-primary my-2 my-lg-0" %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0" %>
+                </li>
+                <li class="nav-item">
+                    <%= button_to "Entrar", "/sessions", method: :get, class: "btn btn-outline-primary my-2 my-lg-0" %>
+                </li>
+            <% end %>
+        </ul>
     </div>
 </nav>
