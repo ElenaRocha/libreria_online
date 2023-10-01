@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get "sessions", to: "sessions#sign"
   post "sessions", to: "sessions#enter"
 
-  delete "logout", to: "sessions#destroy"
+  delete "sessions", to: "sessions#destroy"
 end
