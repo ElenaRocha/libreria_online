@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    # GET /sessions
+       # GET /sessions
     def sign
     end
  
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     def enter
         user = User.find_by(email: params[:email])
         # if user.present? && user.authenticate(params[:password])
-        if user.present? && user.password == :password
+        if user.present? && user.password == params[:password]
             session[:user_id] = user.id
             redirect_to root_path, notice: "Logged in successfully"
         else
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    #DELETE /logout
+    #DELETE /sessions
     def destroy
         session[:user_id] = nil
         redirect_to root_path, notice: "Logged out"
