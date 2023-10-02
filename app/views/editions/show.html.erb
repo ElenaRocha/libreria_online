@@ -2,9 +2,11 @@
 
 <%= render @edition %>
 
-<div>
-  <%= link_to "Edit this edition", edit_edition_path(@edition) %> |
-  <%= link_to "Back to editions", editions_path %>
+<% if Current.user.present? && Current.user.role == "admin" %>
+  <div>
+    <%= link_to "Edit this edition", edit_edition_path(@edition) %> |
+    <%= link_to "Back to editions", editions_path %>
 
-  <%= button_to "Destroy this edition", @edition, method: :delete %>
-</div>
+    <%= button_to "Destroy this edition", @edition, method: :delete %>
+  </div>
+<% end %>
