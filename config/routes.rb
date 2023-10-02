@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   post "sessions", to: "sessions#enter"
   delete "sessions", to: "sessions#destroy"
 
-  get "categories/genre/:genre", to: "categories#set_books_genre"
-  get "categories/author/:author", to: "categories#set_books_author"
+  get "categories/genre/:genre", to: "categories#get_books_genre"
+  get "categories/author/:author", to: "categories#get_books_author"
 end

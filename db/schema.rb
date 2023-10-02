@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_09_29_080740) do
-  create_table "authors", force: :cascade do |t|
+  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "first_surname"
     t.string "second_surname"
@@ -21,42 +21,42 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_080740) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
-    t.integer "author_id", null: false
-    t.integer "genre_id", null: false
+    t.bigint "author_id", null: false
+    t.bigint "genre_id", null: false
     t.date "publication_date"
     t.integer "n_pages"
     t.text "synopsis"
-    t.decimal "price"
+    t.decimal "price", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["genre_id"], name: "index_books_on_genre_id"
   end
 
-  create_table "editions", force: :cascade do |t|
+  create_table "editions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "isbn"
-    t.integer "book_id", null: false
+    t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_editions_on_book_id"
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "genres", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "definition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "first_surname"
     t.string "second_surname"
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_080740) do
     t.string "password"
     t.integer "telephone"
     t.string "address"
-    t.string "role"
+    t.string "role", default: "client"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
