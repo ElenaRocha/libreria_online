@@ -46,10 +46,12 @@
     <%= form.text_field :address %>
   </div>
 
-  <div>
-    <%= form.label :role, style: "display: block" %>
-    <%= form.text_field :role %>
-  </div>
+  <% if Current.user.present? && Current.user.role == "admin" %>
+    <div>
+      <%= form.label :role, style: "display: block" %>
+      <%= form.text_field :role %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.submit %>

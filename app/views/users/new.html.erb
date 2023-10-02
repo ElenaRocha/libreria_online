@@ -4,6 +4,8 @@
 
 <br>
 
-<div>
-  <%= link_to "Back to users", users_path %>
-</div>
+<% if Current.user.present? && Current.user.role == "admin" %>
+  <div>
+    <%= link_to "Back to users", users_path %>
+  </div>
+<% end %>
