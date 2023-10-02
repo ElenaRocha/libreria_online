@@ -12,9 +12,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Géneros</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="categories/genre/1">Filosofía</a>
-                    <a class="dropdown-item" href="categories/genre/2">Fantasía</a>
-                    <a class="dropdown-item" href="categories/genre/3">Misterio</a>
+                    <%= link_to "Filosofía", {:controller => "categories", :action => "get_books_genre", :genre => 1 }, class: "dropdown-item" %>
+                    <%= link_to "Fantasía", {:controller => "categories", :action => "get_books_genre", :genre => 2 }, class: "dropdown-item" %>
+                    <%= link_to "Misterio", {:controller => "categories", :action => "get_books_genre", :genre => 3 }, class: "dropdown-item" %>
                 </div>
             </li>
             <form class="form-inline my-2 my-lg-0">
