@@ -1,0 +1,28 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => "/"} Home
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item
+        %a.nav-link{:href => "/"} Libros
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Géneros
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          = link_to "Filosofía", {:controller => "categories", :action => "get_books_genre", :genre => 1 }, class: "dropdown-item"
+          = link_to "Fantasía", {:controller => "categories", :action => "get_books_genre", :genre => 2 }, class: "dropdown-item"
+          = link_to "Misterio", {:controller => "categories", :action => "get_books_genre", :genre => 3 }, class: "dropdown-item"
+      %form.form-inline.my-2.my-lg-0
+        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Autor", :type => "search"}/
+        %button.btn.btn-primary.my-2.my-sm-0{:type => "submit"} Buscar
+    %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+      - if Current.user
+        %li.nav-item
+          = link_to Current.user.email, {:controller => "users", :action => "show", :id => Current.user.id }, class: "btn btn-link my-2 my-lg-0"
+        %li.nav-item
+          = button_to "Logout", sessions_path, method: :delete, class: "btn btn-outline-primary my-2 my-lg-0"
+      - else
+        %li.nav-item
+          = button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0"
+        %li.nav-item
+          = button_to "Entrar", sessions_path, method: :get, class: "btn btn-outline-primary my-2 my-lg-0"

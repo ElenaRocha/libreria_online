@@ -1,0 +1,9 @@
+%p{:style => "color: green"}= notice
+= render @author
+- if Current.user.present? && Current.user.role == "admin"
+  %div
+    = link_to "Editar autor", edit_author_path(@author)
+    |
+    \#{link_to "Ver todos los autores", authors_path}
+    
+    \#{button_to "Eliminar autor", @author, method: :delete}

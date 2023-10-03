@@ -1,0 +1,7 @@
+%h1 Editar autor
+= render "form", author: @author
+%br/
+%div
+  = link_to "Show this author", @author
+  |
+  \#{link_to "Back to authors", authors_path}

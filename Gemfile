@@ -70,3 +70,15 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+# paper trail para añadir la imágenes de los libros
+gem 'paper_trail'
+
+#html2haml para cambiar el formato de las vistas de .erb a .haml
+gem 'haml'
+gem 'haml-rails'
+
+gem 'html2haml'
+
+#gema de Bootstrap
+gem 'bootstrap'

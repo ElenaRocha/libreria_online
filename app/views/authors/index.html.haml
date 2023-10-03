@@ -1,0 +1,9 @@
+%p{:style => "color: green"}= notice
+%h1 Authors
+#authors
+  - @authors.each do |author|
+    = render author
+    %p
+      = link_to "Ver autor", author
+- if Current.user.present? && Current.user.role == "admin"
+  = link_to "Nuevo autor", new_author_path

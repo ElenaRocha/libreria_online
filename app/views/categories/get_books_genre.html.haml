@@ -1,0 +1,16 @@
+%p{:style => "color: green"}= notice
+%h1 Books
+#books.container
+    .row
+        .col
+        = render @book
+
+-# %p{:style => "color: green"}= notice
+-# %h1 Books
+-# #books.container
+-#   .row
+-#     - @books.each do |book|
+-#       .col
+-#         = render book
+-# - if Current.user.present? && Current.user.role == "admin"
+-#   = link_to "New book", new_book_path

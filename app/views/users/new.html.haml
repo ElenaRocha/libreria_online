@@ -1,0 +1,6 @@
+%h1 New user
+= render "form", user: @user
+%br/
+- if Current.user.present? && Current.user.role == "admin"
+  %div
+    = link_to "Back to users", users_path

@@ -1,0 +1,26 @@
+= form_with(model: author) do |form|
+  - if author.errors.any?
+    %div{:style => "color: red"}
+      %h2
+        = pluralize(author.errors.count, "error")
+        prohibited this author from being saved:
+      %ul
+        - author.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.label :name, style: "display: block"
+    = form.text_field :name
+  %div
+    = form.label :first_surname, style: "display: block"
+    = form.text_field :first_surname
+  %div
+    = form.label :second_surname, style: "display: block"
+    = form.text_field :second_surname
+  %div
+    = form.label :birth_date, style: "display: block"
+    = form.date_field :birth_date
+  %div
+    = form.label :nationality, style: "display: block"
+    = form.text_field :nationality
+  %div
+    = form.submit

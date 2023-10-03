@@ -1,0 +1,15 @@
+%div{:id => "#{dom_id book}"}
+  .card{:style => "width: 18rem;"}
+    %img.card-img-top{:alt => "...", :src => "..."}/
+    .card-body
+      %h5.card-title= book.title
+      %h6.card-subtitle.mb-2.text-body-secondary= book.author_id
+      %p.card-text= book.synopsis
+      %ul.list-group.list-group-flush
+        %li.list-group-item= book.price
+      %a.btn.btn-primary{:href => "#"} Go somewhere
+      %a.card-link{href: "#"} Card link
+      %p
+        - # Incluir editar y borrar en el index para el admin
+        - # Usar 3 iconos para estas acciones, ojo, lapiz y papelera
+        = link_to "Show this book", book
