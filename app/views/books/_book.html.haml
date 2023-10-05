@@ -1,17 +1,22 @@
 %div{:id => "#{dom_id book}"}
   .card{:style => "width: 18rem;"}
-    %img.card-img-top{:alt => "...", :src => "..."}/
+    -# %img.card-img-top{:alt => "cubierta del libro", :src => book.image.url}/
     .card-body
-      %h5.card-title= book.title
-      %h6.card-subtitle.mb-2.text-body-secondary= book.author_id
-      %p.card-text= book.synopsis
+      %h3.card-title= book.title
+      %h5.card-subtitle.mb-2.text-body-secondary= book.author_id
+      %p.card-body= book.synopsis
       %ul.list-group.list-group-flush
         %li.list-group-item= book.genre_id
         %li.list-group-item= book.publication_date
-        %li.list-group-item= book.n_pages
-        %li.list-group-item= book.price
-      -# %a.card-link{href: "#"} Card link
-      %p
-        - # Incluir editar y borrar en el index para el admin
-        - # Usar 3 iconos para estas acciones, ojo, lapiz y papelera
-        = link_to "Show this book", book, class: "btn btn-primary"
+        %li.list-group-item= "#{book.n_pages} pags"
+        %li.list-group-item= "#{book.price} €"
+      #buttons.container.d-flex.justify-content-evenly
+        = link_to book, class: "btn btn-primary" do
+          %i.bi.bi-eye-fill
+        - if Current.user.present? && Current.user.role == "admin"
+          = button_to edit_book_path(book), method: :get, class: "btn btn-primary" do 
+            %i.bi.bi-pencil-fill
+          = button_to book, method: :delete, class: "btn btn-primary" do
+            %i.bi.bi-trash-fill
+        - elsif Current.user.present? && Current.user.role == "client"
+          = button_to "Comprar", class: "btn btn-primary"

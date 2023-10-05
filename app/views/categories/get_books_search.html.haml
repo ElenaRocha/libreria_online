@@ -1,0 +1,6 @@
+%h1 Books
+#books.container
+  .row
+    - @books.each do |book|
+      .col
+        = render book

@@ -12,9 +12,13 @@
           = link_to "Filosofía", {:controller => "categories", :action => "get_books_genre", :genre => 1 }, class: "dropdown-item"
           = link_to "Fantasía", {:controller => "categories", :action => "get_books_genre", :genre => 2 }, class: "dropdown-item"
           = link_to "Misterio", {:controller => "categories", :action => "get_books_genre", :genre => 3 }, class: "dropdown-item"
-      %form.form-inline.my-2.my-lg-0
-        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Autor", :type => "search"}/
-        %button.btn.btn-primary.my-2.my-sm-0{:type => "submit"} Buscar
+      %li.nav-item
+        = render partial: "shared/search_form"
+      - if Current.user.present? && Current.user.role == "admin"
+        = link_to "Crear nuevo libro", new_book_path, class: "btn btn-link my-2 my-lg-0"
+        = link_to "Administrar autores", authors_path, class: "btn btn-link my-2 my-lg-0"
+        = link_to "Administrar géneros", genres_path, class: "btn btn-link my-2 my-lg-0"
+        = link_to "Administrar usuarios", users_path, class: "btn btn-link my-2 my-lg-0"
     %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
       - if Current.user
         %li.nav-item

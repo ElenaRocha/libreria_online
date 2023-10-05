@@ -2,8 +2,8 @@
 = render @user
 - if Current.user.present?
   %div
-    = link_to "Edit this user", edit_user_path(@user)
+    = link_to "Editar perfil", edit_user_path(@user)
     - if Current.user.present? && Current.user.role == "admin"
       |
-      \#{link_to "Back to users", users_path}
-    = button_to "Destroy this user", @user, method: :delete
+      -#{link_to "Back to users", users_path}
+    = link_to "Eliminar cuenta", @user, method: :delete

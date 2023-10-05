@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   delete "sessions", to: "sessions#destroy"
 
   get "categories/genre/:genre", to: "categories#get_books_genre"
-  get "categories/author/:author", to: "categories#get_books_author"
+  get "categories/search/", to: "categories#get_books_search"
 end

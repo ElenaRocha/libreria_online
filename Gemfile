@@ -71,7 +71,7 @@ group :test do
 
 end
 
-# paper trail para añadir la imágenes de los libros
+# para docuemntar cambios
 gem 'paper_trail'
 
 #html2haml para cambiar el formato de las vistas de .erb a .haml
@@ -82,3 +82,9 @@ gem 'html2haml'
 
 #gema de Bootstrap
 gem 'bootstrap'
+
+#para añadir imagenes
+gem 'carrierwave'
+
+#para implementar el buscador
+gem 'ransack'

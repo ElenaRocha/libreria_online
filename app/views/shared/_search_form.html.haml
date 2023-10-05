@@ -1,0 +1,7 @@
+= search_form_for(@query, url: "categories/search", method: :get, class: 'form-inline.my-2.my-lg-0') do |f|
+    = f.search_field :title_or_author_name_or_synopsis_cont, class: 'form-control.mr-sm-2'
+    = f.submit "Buscar", class: 'btn.btn-primary.my-2.my-sm-0'
+
+-# %form.form-inline.my-2.my-lg-0
+-#   %input.form-control.mr-sm-2{"aria-label" => "Search", :type => "search"}/
+-#   %button.btn.btn-primary.my-2.my-sm-0{:type => "submit"} Buscar

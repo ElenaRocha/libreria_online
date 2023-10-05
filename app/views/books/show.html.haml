@@ -1,12 +1,4 @@
 %p{:style => "color: green"}= notice
 = render @book
-- if Current.user.present? && Current.user.role == "client"
-  %div
-    = link_to "Buy book", new_order_path
-- if Current.user.present? && Current.user.role == "admin"
-  %div
-    = link_to "Edit this book", edit_book_path(@book)
-    |
-    \#{link_to "Back to books", books_path}
-    
-    \#{button_to "Destroy this book", @book, method: :delete}
+%div
+    = link_to "Back to books", books_path
