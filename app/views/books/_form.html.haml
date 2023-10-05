@@ -7,9 +7,9 @@
       %ul
         - book.errors.each do |error|
           %li= error.full_message
-  -# %div
-  -#   = form.label :image, style: "display: block"
-  -#   = form.file_field :image
+  %div
+    = form.label :image, style: "display: block"
+    = form.file_field :image
   %div
     = form.label :title, style: "display: block"
     = form.text_field :title

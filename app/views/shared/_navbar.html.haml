@@ -13,7 +13,9 @@
           = link_to "Fantasía", {:controller => "categories", :action => "get_books_genre", :genre => 2 }, class: "dropdown-item"
           = link_to "Misterio", {:controller => "categories", :action => "get_books_genre", :genre => 3 }, class: "dropdown-item"
       %li.nav-item
-        = render partial: "shared/search_form"
+        = search_form_for(@query, url: "categories/search", method: :get, class: 'form-inline.my-2.my-lg-0') do |f|
+          = f.search_field :title_or_author_name_or_synopsis_cont, class: 'form-control.mr-sm-2'
+          = f.submit "Buscar", class: 'btn.btn-primary.my-2.my-sm-0'
       - if Current.user.present? && Current.user.role == "admin"
         = link_to "Crear nuevo libro", new_book_path, class: "btn btn-link my-2 my-lg-0"
         = link_to "Administrar autores", authors_path, class: "btn btn-link my-2 my-lg-0"
