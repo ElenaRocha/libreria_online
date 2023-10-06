@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   get "categories/genre/:genre", to: "categories#get_books_genre"
   get "categories/search/", to: "categories#get_books_search"
+
+  get "shoping", to: "shopings#index"
+  post "shoping", to: "shopings#new"
+  delete "shoping", to: "shopings#destroy"
 end

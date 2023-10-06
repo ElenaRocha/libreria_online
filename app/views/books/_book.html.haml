@@ -19,5 +19,4 @@
           = button_to book, method: :delete, class: "btn btn-primary" do
             %i.bi.bi-trash-fill
         - elsif Current.user.present? && Current.user.role == "client"
-          
-          = button_to "Añadir al pedido", orders_path, class: "btn btn-primary"
+          = link_to "Añadir a compra", shoping_path, class: "btn btn-primary"
