@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-       # GET /sessions
+    # GET /sessions
     def sign
     end
  
@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         # if user.present? && user.authenticate(params[:password])
         if user.present? && user.password == params[:password]
             session[:user_id] = user.id
+            
             redirect_to root_path, notice: "Logged in successfully"
         else
             flash[:alert] = "Invalid email or password"

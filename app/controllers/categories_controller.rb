@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
 
     # GET categories/author
     def get_books_search
-        # @book = Book.where("title = ?", params[:search])
         @books = @query.result(distinct: true)
     end
 end

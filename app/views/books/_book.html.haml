@@ -6,7 +6,7 @@
       %h5.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
       %p.card-body= book.synopsis
       %ul.list-group.list-group-flush
-        -# %li.list-group-item= book.genre_id
+        %li.list-group-item= book.genres.collect(&:definition).each { |g| "#{g}"}
         %li.list-group-item= book.publication_date
         %li.list-group-item= "#{book.n_pages} pags"
         %li.list-group-item= "#{book.price} €"
@@ -19,4 +19,5 @@
           = button_to book, method: :delete, class: "btn btn-primary" do
             %i.bi.bi-trash-fill
         - elsif Current.user.present? && Current.user.role == "client"
-          = button_to "Comprar", class: "btn btn-primary"
+          
+          = button_to "Añadir al pedido", orders_path, class: "btn btn-primary"

@@ -1,0 +1,3 @@
+class ShopingController < ApplicationController
+  
+end
