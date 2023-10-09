@@ -1,0 +1,11 @@
+%p{:style => "color: green"}= notice
+= render @order
+%div
+  = link_to "Edit this order", edit_order_path(@order)
+
+-# %h1 Orders
+-# #orders.container
+-#   .row
+-#     - @orders.each do |order|
+-#       .col
+-#         = render order

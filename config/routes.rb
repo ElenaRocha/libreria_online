@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get "shoping", to: "shopings#index"
   post "shoping", to: "shopings#new"
   delete "shoping", to: "shopings#destroy"
+  get "shoping/orders", to: "shopings#show"
 end
