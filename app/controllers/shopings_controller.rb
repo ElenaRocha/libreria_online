@@ -4,16 +4,26 @@ class ShopingsController < ApplicationController
   def index
     if Current.user.orders
       @order = Order.where(user_id: Current.user.id, state: "pending").to_a
-      puts "Así es como se ven los pedidos #{@order}, qué tipo de objeto estoy manejando? #{@order.class}"
       # .take
     else
-      @order = Order.new
+      new
+      show
     end
   end
 
   # POST /shoping
   def new
+    @order = Order.new(order_params)
 
+    respond_to do |format|
+      if @order.save
+        format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+        format.json { render :show, status: :created, location: @order }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /shoping/:id
