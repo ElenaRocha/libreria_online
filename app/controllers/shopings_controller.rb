@@ -1,10 +1,11 @@
 class ShopingsController < ApplicationController
-  
+
   # GET /shoping
   def index
     if Current.user.orders
-      # && Current.user.orders.state = pending
-      @order = Order.where(state: "pending")
+      @order = Order.where(user_id: Current.user.id, state: "pending").to_a
+      puts "Así es como se ven los pedidos #{@order}, qué tipo de objeto estoy manejando? #{@order.class}"
+      # .take
     else
       @order = Order.new
     end
@@ -12,13 +13,7 @@ class ShopingsController < ApplicationController
 
   # POST /shoping
   def new
-    # if Current.user.orders? 
-    #   # && Current.user.orders.state = pending
-    #   @order = Order.where(state: "pending").take
-    #   # @orders = Order.all
-    # else
-    #   @order = Order.new
-    # end
+
   end
 
   # GET /shoping/:id
