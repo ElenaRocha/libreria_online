@@ -7,6 +7,6 @@
     = link_to "Ver pedidos", shoping_orders_path
     - if Current.user.present? && Current.user.role == "admin"
       |
-      = button_to "Eliminar cuenta", @user, method: :delete, class: "btn btn-link" 
-      |
       = link_to "Ir a usuarios", users_path
+      |
+      = button_to "Eliminar cuenta", @user, method: :delete, class: "btn btn-link" 
