@@ -1,6 +1,7 @@
 %p{:style => "color: green"}= notice
 %h1 Books
 #books.container
-    .row
-        .col
-        = render @book
+  .row
+    - @books.each do |book|
+      .col
+        = render book

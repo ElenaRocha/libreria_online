@@ -3,7 +3,6 @@
 %br/
 %div
   = link_to "Show this order", @order
-  |
   - if Current.user.present? && Current.user.role == "admin"
     %br/
     %div

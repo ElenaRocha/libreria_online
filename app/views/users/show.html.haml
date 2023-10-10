@@ -5,10 +5,8 @@
     = link_to "Editar perfil", edit_user_path(@user)
     |
     = link_to "Ver pedidos", shoping_orders_path
-    -# (:id => Current.user.id)
     - if Current.user.present? && Current.user.role == "admin"
       |
-      -# = link_to "Eliminar cuenta", @user, method: :delete
       = button_to "Eliminar cuenta", @user, method: :delete, class: "btn btn-link" 
       |
       = link_to "Ir a usuarios", users_path

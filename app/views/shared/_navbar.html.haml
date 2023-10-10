@@ -10,7 +10,7 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Géneros
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
           - @genres.each do |genre|
-            = link_to genre.definition, {:controller => "categories", :action => "get_books_genre", :genre => genre.definition }, class: "dropdown-item"
+            = link_to genre.definition, {:controller => "categories", :action => "get_books_genre", :genre => genre.id }, class: "dropdown-item"
       %li.nav-item
         = search_form_for(@query, url: "categories/search", method: :get, class: 'form-inline.my-2.my-lg-0') do |f|
           = f.search_field :title_or_author_name_or_synopsis_cont, class: 'form-control.mr-sm-2'

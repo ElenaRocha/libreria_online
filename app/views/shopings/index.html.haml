@@ -1,9 +1,7 @@
 %p{:style => "color: green"}= notice
 %h1 Orders
-#orders.container
-  .row
-    - @order.each do |order|
-      .col
-        = render order
-        %div
-          = link_to "Edit this order", edit_order_path(@order)
+=render @order
+%div
+  = link_to "Edit this order", edit_order_path(@order)
+  |
+  = link_to "Ver pedidos", shoping_orders_path

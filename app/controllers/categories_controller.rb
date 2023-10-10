@@ -2,12 +2,12 @@ class CategoriesController < ApplicationController
     
     # GET categories/genre/:genre
     def get_books_genre
-        # @book = Book.where("genre_id = ?", params[:genre])
 
-        # @book = Book.where("book.genres = ?", params[:genre])
-        # @book = Book.where(book.genres.collect(&:definition).include?('params[:genre]'))
-        # @book = Book.find_by_genres(params[:genre])
-        #find_by_sql
+        @books = Book.find_by_sql("SELECT * FROM books 
+            INNER JOIN books_genres 
+            ON books.id = books_genres.book_id 
+            WHERE books_genres.genre_id = #{params[:genre]};")
+        puts "veamos el/los libros: #{@books}"
         
     end
 
@@ -15,4 +15,5 @@ class CategoriesController < ApplicationController
     def get_books_search
         @books = @query.result(distinct: true)
     end
+    
 end

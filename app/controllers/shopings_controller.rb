@@ -3,17 +3,16 @@ class ShopingsController < ApplicationController
   # GET /shoping
   def index
     if Current.user.orders
-      @order = Order.where(user_id: Current.user.id, state: "pending").to_a
-      # .take
-    else
-      new
-      show
+      @order = Order.where(user_id: Current.user.id, state: "pending").to_a.last
+    # else
+    #   new
+    #   show
     end
   end
 
   # POST /shoping
   def new
-    @order = Order.new(order_params)
+    @order = Order.new(:user_id, :state)
 
     respond_to do |format|
       if @order.save
