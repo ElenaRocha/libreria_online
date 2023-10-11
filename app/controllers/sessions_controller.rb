@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             redirect_to root_path, notice: "Logged in successfully"
         else
             flash[:alert] = "Invalid email or password"
-            render :sign
+            redirect_to sessions_path
         end
     end
 
