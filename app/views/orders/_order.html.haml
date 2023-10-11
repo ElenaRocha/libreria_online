@@ -5,3 +5,6 @@
   %p
     %strong State:
     = order.state
+  %p
+    %strong Books: 
+    = order.books.collect(&:title)

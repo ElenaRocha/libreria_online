@@ -3,6 +3,14 @@
 %div
   = link_to "Edit this order", edit_order_path(@order)
   |
-  \#{link_to "Back to orders", orders_path}
+  = link_to "Seguir comprando", books_path
+  - if Current.user.present? && Current.user.role == "client"
+    |
+    = link_to "Ver pedidos", shoping_path
+  - if Current.user.present? && Current.user.role == "admin"
+    |
+    %br/
+    %div
+      = link_to "Back to orders", orders_path
   
-  \#{button_to "Destroy this order", @order, method: :delete}
+  =button_to "Destroy this order", @order, method: :delete

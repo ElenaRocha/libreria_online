@@ -6,17 +6,17 @@
       %h5.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
       %p.card-body= book.synopsis
       %ul.list-group.list-group-flush
-        %li.list-group-item= book.genres.collect(&:definition).each { |g| "#{g}"}
+        %li.list-group-item= book.genres.collect(&:definition)
         %li.list-group-item= book.publication_date
         %li.list-group-item= "#{book.n_pages} pags"
         %li.list-group-item= "#{book.price} €"
       #buttons.container.d-flex.justify-content-evenly
-        = link_to book, class: "btn btn-primary" do
+        = link_to book, class: "btn btn-primary m-1" do
           %i.bi.bi-eye-fill
         - if Current.user.present? && Current.user.role == "admin"
-          = button_to edit_book_path(book), method: :get, class: "btn btn-primary" do 
+          = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
             %i.bi.bi-pencil-fill
-          = button_to book, method: :delete, class: "btn btn-primary" do
+          = button_to book, method: :delete, class: "btn btn-primary m-1" do
             %i.bi.bi-trash-fill
         - elsif Current.user.present? && Current.user.role == "client"
-          = link_to "Añadir a compra", shoping_path, class: "btn btn-primary"
+          = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"

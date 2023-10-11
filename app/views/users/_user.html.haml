@@ -20,6 +20,7 @@
   %p
     %strong Address:
     = user.address
-  %p
-    %strong Role:
-    = user.role
+  - if Current.user.present? && Current.user.role == "admin"
+    %p
+      %strong Role:
+      = user.role

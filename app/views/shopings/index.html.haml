@@ -1,1 +1,9 @@
-%h1 Has hecho '#{Current.user.orders.count}' pedidos
+%p{:style => "color: green"}= notice
+%h1 Orders
+=render @order
+%div
+  = link_to "Edit this order", edit_order_path(@order)
+  |
+  = link_to "Ver pedidos", shoping_path
+  |
+  = link_to "Seguir comprando", books_path

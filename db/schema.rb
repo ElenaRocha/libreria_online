@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_06_073045) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_09_081142) do
   create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "first_surname"
@@ -51,9 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_06_073045) do
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id", null: false, default: Current.user.id
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state", default: "pending"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
