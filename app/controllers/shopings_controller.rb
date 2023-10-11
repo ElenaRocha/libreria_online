@@ -1,5 +1,10 @@
 class ShopingsController < ApplicationController
 
+  # GET /shoping
+  def show
+    @order = Order.where(user_id: Current.user.id).to_a
+  end
+
   # GET /shoping/:id
   def index
     if Current.user.orders.any? { |order| order.state == "pending"}
@@ -28,10 +33,10 @@ class ShopingsController < ApplicationController
   #   end
   # end
 
-  # GET /shoping
-  def show
-    @order = Order.where(user_id: Current.user.id).to_a
-  end
+  # DELETE /shoping
+  # def destroy
+  #   order.books.delete(order.book_id=book.id)
+  # end
 
   # POST /shoping/finish/:id
   def finish
@@ -40,10 +45,5 @@ class ShopingsController < ApplicationController
     @order.save
     redirect_to shoping_path
   end
-
-  # DELETE /shoping
-  # def destroy
-  #   order.books.delete(order.book_id=book.id)
-  # end
 
 end

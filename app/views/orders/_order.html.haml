@@ -5,6 +5,13 @@
   %p
     %strong State:
     = order.state
+
   %p
     %strong Books: 
-    = order.books.collect(&:title)
+    - order.books.each do |book|
+      = "- #{book.title}, #{book.price}€"
+      %br/
+  %p
+    %strong Importe: 
+    - @totalsum = order.books.map { |book| book.price }.sum
+    = "#{@totalsum}€"
