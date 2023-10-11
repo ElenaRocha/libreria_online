@@ -8,16 +8,14 @@ class ShopingsController < ApplicationController
       @order.books << @book
     else
       @book = Book.find(params[:id])
-      @order = Order.new()
+      @order = Current.user.orders.create(state: "pending")
       @order.books << @book
-      redirect_to books_path
     end
   end
 
   # # POST /shoping
   # def new
   #   @order = Order.new()
-  #   # @order = @user.orders.create(:order_date => Time.now)
 
   #   respond_to do |format|
   #     if @order.save

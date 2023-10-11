@@ -1,5 +1,6 @@
 %p{:style => "color: green"}= notice
 %h1 Orders
+= link_to "Seguir comprando", books_path
 #orders.container
   .row
     - @order.each do |order|
