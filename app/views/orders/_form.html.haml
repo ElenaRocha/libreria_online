@@ -13,5 +13,9 @@
   %div
     = form.label :state, style: "display: block"
     = form.text_field :state
+  -# %div
+  -#   = form.label :books, style: "display: block"
+  -#   - @books.each do |book|
+  -#     = check_box_tag book.title :books
   %div
     = form.submit
