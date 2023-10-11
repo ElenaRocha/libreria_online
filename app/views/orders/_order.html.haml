@@ -10,6 +10,7 @@
     %strong Books: 
     - order.books.each do |book|
       = "- #{book.title}, #{book.price}€"
+      = link_to "Eliminar", delete_shoping_path(book), class: 'btn.btn-primary.my-2.my-sm-0'
       %br/
   %p
     %strong Importe: 

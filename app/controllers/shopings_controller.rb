@@ -33,10 +33,13 @@ class ShopingsController < ApplicationController
   #   end
   # end
 
-  # DELETE /shoping
-  # def destroy
-  #   order.books.delete(order.book_id=book.id)
-  # end
+  # GET /delete/shoping
+  def destroy
+    puts "quiero primero ver #{@order.inspect}"
+    puts "y luego #{book.inspect}"
+    # order.books.delete(order.book_id=book.id)
+    # redirect_to shoping_path
+  end
 
   # POST /shoping/finish/:id
   def finish
