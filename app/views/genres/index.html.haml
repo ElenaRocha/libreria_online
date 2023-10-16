@@ -1,8 +1,8 @@
-%h1 Genres
+%h1 Géneros
 #genres
   - @genres.each do |genre|
     = render genre
     %p
-      = link_to "Show this genre", genre
+      = link_to "Ficha de género", genre
 - if Current.user.present? && Current.user.role == "admin"
-  = link_to "New genre", new_genre_path
+  = link_to "Nuevo género", new_genre_path

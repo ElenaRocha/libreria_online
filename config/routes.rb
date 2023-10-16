@@ -23,8 +23,8 @@ Rails.application.routes.draw do
 
   get "shoping/:id", to: "shopings#index"
   post "shoping", to: "shopings#new"
-  delete "shoping", to: "shopings#destroy"
   get "shoping", to: "shopings#show"
   post "shoping/finish/:id", to: "shopings#finish"
-  get "delete/shoping", to: "shopings#destroy"
+  delete "shoping/:book", to: "shopings#destroy"
+
 end

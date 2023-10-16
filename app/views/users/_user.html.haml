@@ -1,24 +1,24 @@
 %div{:id => "#{dom_id user}"}
   %p
-    %strong Name:
+    %strong Nombre:
     = user.name
   %p
-    %strong First surname:
+    %strong Primer apellido:
     = user.first_surname
   %p
-    %strong Second surname:
+    %strong Segundo apellido:
     = user.second_surname
   %p
     %strong Email:
     = user.email
   %p
-    %strong Password:
+    %strong Contraseña:
     = user.password
   %p
-    %strong Telephone:
+    %strong Teléfono:
     = user.telephone
   %p
-    %strong Address:
+    %strong Dirección:
     = user.address
   - if Current.user.present? && Current.user.role == "admin"
     %p

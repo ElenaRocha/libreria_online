@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_081142) do
     t.bigint "user_id", null: false, default: Current.user.id
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "state", default: "pending"
+    t.string "state", default: "activo"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

@@ -8,25 +8,25 @@
         - book.errors.each do |error|
           %li= error.full_message
   %div
-    = form.label :image, style: "display: block"
+    = form.label :portada, style: "display: block"
     = form.file_field :image
   %div
-    = form.label :title, style: "display: block"
+    = form.label :título, style: "display: block"
     = form.text_field :title
   %div
-    = form.label :author_id, style: "display: block"
+    = form.label :id_autor, style: "display: block"
     = form.text_field :author_id
   %div
-    = form.label :publication_date, style: "display: block"
+    = form.label :fecha_de_publicación, style: "display: block"
     = form.date_field :publication_date
   %div
-    = form.label :n_pages, style: "display: block"
+    = form.label :número_de_páginas, style: "display: block"
     = form.number_field :n_pages
   %div
-    = form.label :synopsis, style: "display: block"
+    = form.label :sinopsis, style: "display: block"
     = form.text_area :synopsis
   %div
-    = form.label :price, style: "display: block"
+    = form.label :precio, style: "display: block"
     = form.text_field :price
   %div
     = form.submit

@@ -7,13 +7,13 @@ class ShopingsController < ApplicationController
 
   # GET /shoping/:id
   def index
-    if Current.user.orders.any? { |order| order.state == "pending"}
-      @order = Order.where(user_id: Current.user.id, state: "pending").to_a.last
+    if Current.user.orders.any? { |order| order.state == "activo"}
+      @order = Order.where(user_id: Current.user.id, state: "activo").to_a.last
       @book = Book.find(params[:id])
       @order.books << @book
     else
       @book = Book.find(params[:id])
-      @order = Current.user.orders.create(state: "pending")
+      @order = Current.user.orders.create(state: "activo")
       @order.books << @book
     end
   end
@@ -33,7 +33,7 @@ class ShopingsController < ApplicationController
   #   end
   # end
 
-  # GET /delete/shoping
+  # DELETE /shoping
   def destroy
     puts "quiero primero ver #{@order.inspect}"
     puts "y luego #{book.inspect}"
@@ -44,7 +44,7 @@ class ShopingsController < ApplicationController
   # POST /shoping/finish/:id
   def finish
     @order = Order.find(params[:id])
-    @order.state = "finished"
+    @order.state = "finalizado"
     @order.save
     redirect_to shoping_path
   end
