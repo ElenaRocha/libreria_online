@@ -8,29 +8,29 @@
         - user.errors.each do |error|
           %li= error.full_message
   %div
-    = form.label :nombre, style: "display: block"
+    = form.label :nombre, style: "display: block", required: true
     = form.text_field :name
   %div
-    = form.label :primer_apellido, style: "display: block"
+    = form.label :primer_apellido, style: "display: block", required: true
     = form.text_field :first_surname
   %div
     = form.label :segundo_apellido, style: "display: block"
     = form.text_field :second_surname
   %div
-    = form.label :email, style: "display: block"
+    = form.label :email, style: "display: block", required: true
     = form.text_field :email
   %div
-    = form.label :contraseña, style: "display: block"
+    = form.label :contraseña, style: "display: block", required: true
     = form.text_field :password
   %div
-    = form.label :teléfono, style: "display: block"
+    = form.label :teléfono, style: "display: block", required: true
     = form.number_field :telephone
   %div
-    = form.label :dirección, style: "display: block"
+    = form.label :dirección, style: "display: block", required: true
     = form.text_field :address
   - if Current.user.present? && Current.user.role == "admin"
     %div
-      = form.label :role, style: "display: block"
+      = form.label :role, style: "display: block", required: true
       = form.text_field :role
   %div
     = form.submit

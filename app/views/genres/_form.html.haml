@@ -8,7 +8,7 @@
         - genre.errors.each do |error|
           %li= error.full_message
   %div
-    = form.label :descripción, style: "display: block"
+    = form.label :descripción, style: "display: block", required: true
     = form.text_field :definition
   %div
     = form.submit

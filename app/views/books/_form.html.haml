@@ -8,25 +8,30 @@
         - book.errors.each do |error|
           %li= error.full_message
   %div
-    = form.label :portada, style: "display: block"
+    = form.label :portada, style: "display: block", required: true
     = form.file_field :image
   %div
-    = form.label :título, style: "display: block"
+    = form.label :título, style: "display: block", required: true
     = form.text_field :title
   %div
-    = form.label :id_autor, style: "display: block"
+    = form.label :id_autor, style: "display: block", required: true
     = form.text_field :author_id
   %div
-    = form.label :fecha_de_publicación, style: "display: block"
+    = form.label :géneros, style: "display: block"
+    - puts "es que no puedo sacar los género? #{@genres.inspect}"
+    - @genres.each do |genre|
+      = check_box_tag genre.definition, genre.id
+  %div
+    = form.label :fecha_de_publicación, style: "display: block", required: true
     = form.date_field :publication_date
   %div
-    = form.label :número_de_páginas, style: "display: block"
+    = form.label :número_de_páginas, style: "display: block", required: true
     = form.number_field :n_pages
   %div
-    = form.label :sinopsis, style: "display: block"
+    = form.label :sinopsis, style: "display: block", required: true
     = form.text_area :synopsis
   %div
-    = form.label :precio, style: "display: block"
+    = form.label :precio, style: "display: block", required: true
     = form.text_field :price
   %div
     = form.submit

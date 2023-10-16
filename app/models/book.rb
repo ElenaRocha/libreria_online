@@ -5,6 +5,9 @@ class Book < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  validates :title, presence: true
+  validates :title, uniqueness: true
+
   def self.ransackable_attributes(auth_object = nil)
     ["title", "synopsis"]
   end

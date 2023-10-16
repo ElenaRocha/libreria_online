@@ -8,10 +8,10 @@
         - order.errors.each do |error|
           %li= error.full_message
   %div
-    = form.label :id_usuario, style: "display: block"
+    = form.label :id_usuario, style: "display: block", required: true
     = form.text_field :user_id
   %div
-    = form.label :estado, style: "display: block"
+    = form.label :estado, style: "display: block", required: true
     = form.text_field :state
   %div
     = form.submit

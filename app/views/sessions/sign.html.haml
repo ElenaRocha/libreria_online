@@ -9,10 +9,10 @@
   -#       - @user.errors.each do |error|
   -#         %li= error.full_message
   %div
-    = form.label :email, style: "display: block"
+    = form.label :email, style: "display: block", required: true
     = form.text_field :email
   %div
-    = form.label :contraseña, style: "display: block"
+    = form.label :contraseña, style: "display: block", required: true
     = form.text_field :password
   %div
     = form.submit

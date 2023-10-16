@@ -8,7 +8,5 @@
       .col
         = render order
         %div
-          -# = link_to "Edit this order", edit_order_path(@order)
-          -# |
         - if order.state == "activo"
           = button_to "Finalizar pedido", {:controller => "shopings", :action => "finish", :id => order.id }
