@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :orders
 
+  accepts_nested_attributes_for :genres
+
   mount_uploader :image, ImageUploader
 
   validates :title, presence: true

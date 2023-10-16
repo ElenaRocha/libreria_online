@@ -11,7 +11,7 @@
     - order.books.each do |book|
       = "- #{book.title}, #{book.price}€"
       - if order.state == "activo"
-        = button_to "Eliminar", shoping_path(:order => order.id), method: :delete, class: "btn btn-link my-2 my-lg-0 d-inline" 
+        = button_to "Eliminar", shoping_path(:order => order, :book => book), method: :delete, class: "btn btn-link my-2 my-lg-0 d-inline" 
         -# d-flex
       %br/
   %p

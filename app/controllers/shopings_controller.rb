@@ -18,26 +18,11 @@ class ShopingsController < ApplicationController
     end
   end
 
-  # # POST /shoping
-  # def new
-  #   @order = Order.new()
-
-  #   respond_to do |format|
-  #     if @order.save
-  #       format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
-  #       format.json { render :show, status: :created, location: @order }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @order.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
   # DELETE /shoping
   def destroy
-    puts "quiero primero ver #{order.inspect}"
+    # puts "quiero primero ver #{order.inspect}"
     # puts "y luego #{book.inspect}"
-    # order.books.delete(order.book_id=book.id)
+    order.books.delete(order.book_id=book)
     redirect_to shoping_path
   end
 
