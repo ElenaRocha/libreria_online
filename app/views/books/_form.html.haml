@@ -21,21 +21,6 @@
     - puts "es que no puedo sacar los género? #{@genres.inspect}"
     - @genres.each do |genre|
       = check_box_tag genre.definition, genre.id
--# <%= f.flieds_for :genres do |g| %>
--# <div class="row">
--#   <div class="col-md-3">
--#     <div class="form-goup">
--#       <%= g.label :genre_one, "Genre 1", :class => "" %>
--#       <%= p-field :genre_one, {class: "form-control", :style => ""} %>
--#     </div>
--#   </div>
--# </div>
--# <% end %>
-
--# <%= f.flieds_for :genres do |g| %>
--#  <%= g.label :definición, style: "display: block" %>
--#  <%= g.text_filed :definition %>
--# <% end %>
   %div
     = form.label :fecha_de_publicación, style: "display: block", required: true
     = form.date_field :publication_date
