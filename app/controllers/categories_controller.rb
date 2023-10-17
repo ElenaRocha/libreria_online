@@ -14,10 +14,12 @@ class CategoriesController < ApplicationController
         # @query = Book.ransack(params[:q])
         @books = @query.result(distinct: true)
         # puts "la query: #{@query} y el inspect: #{@query.inspect} y cuales son los params? #{params}"
-        params.delete("q")
+        # params.delete("q")
+        
         # respond_to do |format|
         #     format.html
         #     format.json {render json: @books}
+        #     format.js
     end
 
     # def clear_search
