@@ -6,6 +6,18 @@
     %strong Estado:
     = order.state
 
+  -# %p
+  -#   %strong Libros: 
+  -#   - order.books.each do |book|
+  -#     -# %div.d-flex 
+  -#     -#   = "- #{book.title}, #{book.price}€"
+  -#     -#   - if order.state == "activo"
+  -#     -#     = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, class: "btn btn-link my-1 my-lg-0" 
+  -#     -#   %br/
+  -#     = "- #{book.title}, #{book.price}€"
+  -#     - if order.state == "activo"
+  -#       = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, class: "btn btn-link my-1 my-lg-0" 
+  -#     %br/
   %p
     %strong Libros: 
     - order.books.each do |book|
@@ -13,6 +25,7 @@
       - if order.state == "activo"
         = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, class: "btn btn-link my-2 my-lg-0 d-inline" 
       %br/
+
   %p
     %strong Importe: 
     - @totalsum = order.books.map { |book| book.price }.sum

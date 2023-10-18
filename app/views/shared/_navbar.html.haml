@@ -12,23 +12,23 @@
           - @genres.each do |genre|
             = link_to genre.definition, {:controller => "categories", :action => "get_books_genre", :genre => genre.id }, class: "dropdown-item"
       %li.nav-item
-        = search_form_for(@query, url: "/categories/search", method: :get, class: 'form-inline.my-2.my-lg-0') do |f|
-          = f.search_field :title_or_author_name_or_synopsis_cont, placeholder: "Título, autor o descripción", class: 'form-control.mr-sm-2'
-          = f.submit "Buscar", class: 'btn.btn-primary.my-2.my-sm-0'
+        = search_form_for(@query, url: "/categories/search", method: :get, class: 'form-inline my-2 my-lg-0') do |f|
+          = f.search_field :title_or_author_name_or_synopsis_cont, placeholder: "Título, autor o descripción", class: 'form-control mr-sm-2'
+          = f.submit "Buscar", class: 'btn btn-primary my-2 my-sm-0'
       - if Current.user.present? && Current.user.role == "admin"
         = link_to "Crear nuevo libro", new_book_path, class: "btn btn-link my-2 my-lg-0"
         = link_to "Administrar autores", authors_path, class: "btn btn-link my-2 my-lg-0"
         = link_to "Administrar géneros", genres_path, class: "btn btn-link my-2 my-lg-0"
         = link_to "Administrar usuarios", users_path, class: "btn btn-link my-2 my-lg-0"
         = link_to "Administrar pedidos", orders_path, class: "btn btn-link my-2 my-lg-0"
-    %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
-      - if Current.user
-        %li.nav-item
-          = link_to Current.user.email, {:controller => "users", :action => "show", :id => Current.user.id }, class: "btn btn-link my-2 my-lg-0"
-        %li.nav-item
-          = button_to "Salir", sessions_path, method: :delete, class: "btn btn-outline-primary my-2 my-lg-0"
-      - else
-        %li.nav-item
-          = button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0"
-        %li.nav-item
-          = button_to "Entrar", sessions_path, method: :get, class: "btn btn-outline-primary my-2 my-lg-0"
+  %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+    - if Current.user
+      %li.nav-item
+        = link_to Current.user.email, {:controller => "users", :action => "show", :id => Current.user.id }, class: "btn btn-link my-2 my-lg-0"
+      %li.nav-item
+        = button_to "Salir", sessions_path, method: :delete, class: "btn btn-outline-primary my-2 my-lg-0"
+    - else
+      %li.nav-item
+        = button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0"
+      %li.nav-item
+        = button_to "Entrar", sessions_path, method: :get, class: "btn btn-outline-primary my-2 my-lg-0"
