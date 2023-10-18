@@ -1,5 +1,5 @@
 class Author < ApplicationRecord
-  has_many :books
+  has_many :books, dependent: :destroy_async
 
   validates :name, presence: true
 

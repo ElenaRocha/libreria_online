@@ -18,9 +18,7 @@
     = form.text_field :author_id
   %div
     = form.label :géneros, style: "display: block"
-    - puts "es que no puedo sacar los género? #{@genres.inspect}"
-    - @genres.each do |genre|
-      = check_box_tag genre.definition, genre.id
+    = form.collection_check_boxes :genre_ids, Genre.order(:definition), :id, :definition
   %div
     = form.label :fecha_de_publicación, style: "display: block", required: true
     = form.date_field :publication_date
