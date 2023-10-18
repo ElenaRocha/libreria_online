@@ -164,6 +164,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.1.0)
     paper_trail (15.0.0)
       activerecord (>= 6.1)
       request_store (~> 1.4)
@@ -274,7 +275,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt
   bootsnap
   bootstrap
   capybara
@@ -286,6 +287,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)
+  pagy
   paper_trail
   puma (~> 5.0)
   rails (~> 7.0.8)

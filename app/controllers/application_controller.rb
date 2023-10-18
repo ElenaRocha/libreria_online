@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+  
   before_action :set_current_user
   before_action :set_query
   before_action :set_genres

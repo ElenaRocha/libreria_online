@@ -18,7 +18,8 @@
     = form.text_field :author_id
   %div
     = form.label :géneros, style: "display: block"
-    = form.collection_check_boxes :genre_ids, Genre.order(:definition), :id, :definition
+    = form.collection_check_boxes :genre_ids, @genres, :id, :definition
+    -# book.genres.build
   %div
     = form.label :fecha_de_publicación, style: "display: block", required: true
     = form.date_field :publication_date

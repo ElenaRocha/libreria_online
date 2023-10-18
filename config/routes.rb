@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :orders, :editions, :books, :authors, :genres, :users
+  resources :orders, :books, :authors, :genres, :users
 
   root to: "books#index"
 
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post "shoping", to: "shopings#new"
   get "shoping", to: "shopings#show"
   post "shoping/finish/:id", to: "shopings#finish"
-  delete "shoping/", to: "shopings#destroy"
+  
+  # get "orders/new", to: "orders#new", :constraint => {Current.user.role == "admin"}
 
 end
