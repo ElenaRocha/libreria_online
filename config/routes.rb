@@ -15,7 +15,5 @@ Rails.application.routes.draw do
   get "shoping", to: "shopings#show"
   post "shoping/finish/:id", to: "shopings#finish"
   delete "shoping", to: "shopings#destroy"
-  
-  # get "orders/new", to: "orders#new", :constraint => {Current.user.role == "admin"}
 
 end

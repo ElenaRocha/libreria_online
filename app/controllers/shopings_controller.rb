@@ -21,7 +21,7 @@ class ShopingsController < ApplicationController
   # DELETE /shoping
   def destroy
     @order = Order.find(params[:order_id])
-    @order.books.find_by_sql(" DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = 20 AND `books_orders`.`book_id` = 1 LIMIT 1")
+    @order.books.find_by_sql("DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = #{params[:order_id]} AND `books_orders`.`book_id` = #{params[:book_id]} LIMIT 1")
     redirect_to shoping_path
   end
 

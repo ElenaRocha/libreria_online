@@ -7,8 +7,8 @@
       %ul
         - genre.errors.each do |error|
           %li= error.full_message
-  %div
+  %div.form-group.field.w-25
     = form.label :descripción, style: "display: block", required: true
-    = form.text_field :definition
+    = form.text_field :definition, class: "form-control"
   %div
-    = form.submit
+    = form.submit :Guardar, class: 'btn btn-primary'

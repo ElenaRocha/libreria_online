@@ -2,6 +2,8 @@ class Book < ApplicationRecord
   belongs_to :author
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :orders
+  # has_many :books_orders
+  # has_many :orders, through: :books_orders
 
   accepts_nested_attributes_for :genres
 
