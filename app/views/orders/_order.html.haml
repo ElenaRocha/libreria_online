@@ -11,6 +11,7 @@
       = "- #{book.title}, #{book.price}€"
       - if order.state == "activo"
         = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, class: "btn btn-link my-2 my-lg-0 d-inline" 
+        -# = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, remote: true, class: "btn btn-link my-2 my-lg-0 d-inline" 
       %br/
   %p
     %strong Importe: 

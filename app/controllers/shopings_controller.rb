@@ -20,9 +20,11 @@ class ShopingsController < ApplicationController
 
   # DELETE /shoping
   def destroy
-    @order = Order.find(params[:order_id])
-    @order.books.find_by_sql("DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = #{params[:order_id]} AND `books_orders`.`book_id` = #{params[:book_id]} LIMIT 1")
-    redirect_to shoping_path
+    ActiveRecord::Base.connection.exec_query("DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = #{params[:order_id]} AND `books_orders`.`book_id` = #{params[:book_id]} LIMIT 1")
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    redirect_to order_path(:id => params[:order_id])
   end
 
   # POST /shoping/finish/:id
