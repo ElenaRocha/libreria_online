@@ -1,6 +1,6 @@
 %div{:id => "#{dom_id book}"}
   .card{:style => "width: 18rem;"}
-    %img.card-img-top{:alt => book.title, :src => book.image.url, style: "width: 100%; height: 12vw"}/
+    %img.card-img-top{:alt => book.title, :src => book.image.url, style: "width: 100%; height: 222px"}/
     .card-body
       %h3.card-title= book.title
       %h5.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
@@ -21,4 +21,3 @@
             %i.bi.bi-pencil-fill
           = button_to book, method: :delete, class: "btn btn-primary m-1" do
             %i.bi.bi-trash-fill
-            

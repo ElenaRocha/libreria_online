@@ -13,7 +13,6 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
-    # @book.buil_genres
   end
 
   # GET /books/1/edit

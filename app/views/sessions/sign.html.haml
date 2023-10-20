@@ -8,4 +8,4 @@
     = form.text_field :password, class: "form-control"
   %div
     = form.submit :Entrar, class: 'btn btn-primary'
-    = button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0"
+    = button_to "Registrarse", new_user_path, method: :get, class: "btn btn-link my-2 my-lg-0"

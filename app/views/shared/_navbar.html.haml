@@ -29,6 +29,6 @@
         = button_to "Salir", sessions_path, method: :delete, class: "btn btn-outline-primary my-2 my-lg-0"
     - else
       %li.nav-item
-        = button_to "Registrarse", "/users/new", method: :get, class: "btn btn-link my-2 my-lg-0"
+        = button_to "Registrarse", new_user_path, method: :get, class: "btn btn-link my-2 my-lg-0"
       %li.nav-item
         = button_to "Entrar", sessions_path, method: :get, class: "btn btn-outline-primary my-2 my-lg-0"
