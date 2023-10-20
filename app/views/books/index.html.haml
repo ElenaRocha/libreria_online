@@ -3,5 +3,5 @@
   .row
     - @books.each do |book|
       .col
-        = render book
+        = render partial: 'book_preview', locals: {book: book}
 = render partial: "shared/pagination"

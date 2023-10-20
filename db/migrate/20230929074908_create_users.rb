@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_surname
       t.string :second_surname
       t.string :email
-      t.string :password
+      t.string :password_digest
       t.integer :telephone
       t.string :address
       t.string :role,  default: "client"

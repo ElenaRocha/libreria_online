@@ -1,23 +1,35 @@
 %div{:id => "#{dom_id book}"}
-  .card{:style => "width: 18rem;"}
-    %img.card-img-top{:alt => book.title, :src => book.image.url, style: "width: 100%; height: 222px"}/
-    .card-body
-      %h3.card-title= book.title
-      %h5.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
-      %p.card-body= book.synopsis
-      %ul.list-group.list-group-flush: 
-        -# - book.genres.each do |genre|
-        -#   %li.list-group-item=  "'#{genre.definition}', "
-        %li.list-group-item= book.genres.collect(&:definition)
-        %li.list-group-item= book.publication_date
-        %li.list-group-item= "#{book.n_pages} pags"
-        %li.list-group-item= "#{book.price} €"
-      #buttons.container.d-flex.justify-content-evenly
-        = link_to book, class: "btn btn-primary m-1" do
-          %i.bi.bi-eye-fill
-        = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
-        - if Current.user.present? && Current.user.role == "admin"
-          = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
-            %i.bi.bi-pencil-fill
-          = button_to book, method: :delete, class: "btn btn-primary m-1" do
-            %i.bi.bi-trash-fill
+  %p
+    = image_tag book.image.url, size: "400x400", alt: book.title
+  %p
+    %strong Título:
+    = book.title
+  %p
+    %strong Autor:
+    = book.author.name
+  %p
+    %strong Géneros: 
+    -# - book.genres.each do |genre|
+    -#   %li.list-group-item=  "'#{genre.definition}', "
+    = book.genres.collect(&:definition)
+  %p
+    %strong Fecha de publicación:
+    = book.publication_date
+  %p
+    %strong Número de páginas:
+    = "#{book.n_pages} pags"
+  %p
+    %strong Sinopsis:
+    = book.synopsis
+  %p
+    %strong Precio:
+    = "#{book.price} €"
+  #buttons.container.d-flex.justify-content-evenly
+    = link_to book, class: "btn btn-primary m-1" do
+      %i.bi.bi-eye-fill
+    = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
+    - if Current.user.present? && Current.user.role == "admin"
+      = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
+        %i.bi.bi-pencil-fill
+      = button_to book, method: :delete, class: "btn btn-primary m-1" do
+        %i.bi.bi-trash-fill

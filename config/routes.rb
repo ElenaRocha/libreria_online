@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get "sessions", to: "sessions#sign"
   post "sessions", to: "sessions#enter"
   delete "sessions", to: "sessions#destroy"
+  get "password", to: "sessions#password"
 
   get "categories/genre/:genre", to: "categories#get_books_genre"
   get "categories/search/", to: "categories#get_books_search"

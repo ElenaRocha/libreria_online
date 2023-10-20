@@ -21,7 +21,10 @@
     = form.text_field :email, class: "form-control"
   %div.form-group.field.w-25
     = form.label :contraseña, style: "display: block", required: true
-    = form.text_field :password, class: "form-control"
+    = form.password_field :password, class: "form-control"
+  %div.form-group.field.w-25
+    = form.label :confirmar_contraseña, style: "display: block", required: true
+    = form.password_field :password, class: "form-control"
   %div.form-group.field.w-25
     = form.label :teléfono, style: "display: block", required: true
     = form.number_field :telephone, class: "form-control"
