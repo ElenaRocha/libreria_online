@@ -15,10 +15,10 @@
       #buttons.container.d-flex.justify-content-evenly
         = link_to book, class: "btn btn-primary m-1" do
           %i.bi.bi-eye-fill
+        = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
         - if Current.user.present? && Current.user.role == "admin"
           = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
             %i.bi.bi-pencil-fill
           = button_to book, method: :delete, class: "btn btn-primary m-1" do
             %i.bi.bi-trash-fill
-        - elsif Current.user.present? && Current.user.role == "client"
-          = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
+            
