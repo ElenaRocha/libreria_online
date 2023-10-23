@@ -3,12 +3,13 @@
     %img.card-img-top{:alt => book.title, :src => book.image.url, style: "width: 100%; height: 222px"}/
     -# 12vw
     .card-body
-      %h3.card-title= book.title
-      %h5.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
-      %p.card-body= "#{book.price} €"
+      %h2.card-title= book.title
+      %h4.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
+      %h5.card-body= "#{book.price} €"
       #buttons.container.d-flex.justify-content-evenly
         = link_to book, class: "btn btn-primary m-1" do
           %i.bi.bi-eye-fill
+        = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
         - if Current.user.present? && Current.user.role == "admin"
           = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
             %i.bi.bi-pencil-fill
