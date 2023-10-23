@@ -4,7 +4,7 @@
     -# 12vw
     .card-body
       %h2.card-title= book.title
-      %h4.card-subtitle.mb-2.text-body-secondary= "#{book.author.name} #{book.author.first_surname} #{book.author.second_surname}"
+      %h4.card-subtitle.mb-2.text-body-secondary= "#{book.author.name}"
       %h5.card-body= "#{book.price} €"
       #buttons.container.d-flex.justify-content-evenly
         - if Current.user.present? && Current.user.role == "admin"

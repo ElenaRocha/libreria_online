@@ -13,8 +13,6 @@
 ActiveRecord::Schema[7.0].define(version: 2023_10_09_081142) do
   create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "first_surname"
-    t.string "second_surname"
     t.date "birth_date"
     t.string "nationality"
     t.datetime "created_at", null: false

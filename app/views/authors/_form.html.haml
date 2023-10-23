@@ -8,14 +8,8 @@
         - author.errors.each do |error|
           %li= error.full_message
   %div.form-group.field.w-25
-    = form.label :nombre, style: "display: block", required: true
+    = form.label :nombre_completo, style: "display: block", required: true
     = form.text_field :name, class: "form-control"
-  %div.form-group.field.w-25
-    = form.label :primer_apellido, style: "display: block"
-    = form.text_field :first_surname, class: "form-control"
-  %div.form-group.field.w-25
-    = form.label :segundo_apellido, style: "display: block"
-    = form.text_field :second_surname, class: "form-control"
   %div.form-group.field.w-25
     = form.label :fecha_de_nacimiento, style: "display: block"
     = form.date_field :birth_date, class: "form-control"
