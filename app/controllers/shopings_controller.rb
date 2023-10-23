@@ -29,6 +29,8 @@ class ShopingsController < ApplicationController
     # respond_to do |format|
     #   format.html
     #   format.js
+
+    
     redirect_to order_path(:id => params[:order_id])
   end
 

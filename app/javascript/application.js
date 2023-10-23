@@ -2,9 +2,9 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-$(".toggle-password").on('click',function() 
-{if ($(".password").attr('type') === 'password') {$(".password").attr('type', 'text');
-} else {
-$(".password").attr('type', 'password');
-}
-});
+// $(".toggle-password").on('click',function() 
+// {if ($(".password").attr('type') === 'password') {$(".password").attr('type', 'text');
+// } else {
+// $(".password").attr('type', 'password');
+// }
+// });
