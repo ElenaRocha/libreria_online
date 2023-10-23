@@ -8,13 +8,13 @@
         - author.errors.each do |error|
           %li= error.full_message
   %div.form-group.field.w-25
-    = form.label :nombre_completo, style: "display: block", required: true
+    = form.label :name, "Nombre completo", style: "display: block", required: true
     = form.text_field :name, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :fecha_de_nacimiento, style: "display: block"
+    = form.label :birth_date, "Fecha de nacimiento", style: "display: block"
     = form.date_field :birth_date, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :nacionalidad, style: "display: block"
+    = form.label :nationality, "Nacionalidad", style: "display: block"
     = form.text_field :nationality, class: "form-control"
   %div
     = form.submit :Guardar, class: 'btn btn-primary'

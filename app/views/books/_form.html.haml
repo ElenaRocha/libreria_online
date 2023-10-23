@@ -8,31 +8,31 @@
         - book.errors.each do |error|
           %li= error.full_message
   %div.form-group.field.w-25
-    = form.label :portada, style: "display: block", required: true
+    = form.label :image, "Portada", style: "display: block", required: true
     = form.file_field :image
   %div.form-group.field.w-25
-    = form.label :título, style: "display: block", required: true
+    = form.label :title, "Título", style: "display: block", required: true
     = form.text_field :title, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :id_autor, style: "display: block", required: true
+    = form.label :author_id, "ID del autor", style: "display: block", required: true
     = form.text_field :author_id, class: "form-control"
   %div.form-group.field
-    = form.label :géneros, style: "display: block"
+    = form.label :genre_ids, "Géneros", style: "display: block"
     = form.collection_check_boxes :genre_ids, @genres, :id, :definition do |b|
       = b.check_box
       = b.label class:"label-checkbox"
       %br/
   %div.form-group.field.w-25
-    = form.label :fecha_de_publicación, style: "display: block", required: true
+    = form.label :publication_date, "Fecha de publicación", style: "display: block", required: true
     = form.date_field :publication_date, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :número_de_páginas, style: "display: block", required: true
+    = form.label :n_pages, "Número de páginas", style: "display: block", required: true
     = form.number_field :n_pages, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :sinopsis, style: "display: block", required: true
+    = form.label :synopsis, "Sinopsis", style: "display: block", required: true
     = form.text_area :synopsis, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :precio, style: "display: block", required: true
+    = form.label :price, "Precio", style: "display: block", required: true
     = form.text_field :price, class: "form-control"
   %div
     = form.submit :Guardar, class: 'btn btn-primary'

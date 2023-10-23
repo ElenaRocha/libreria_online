@@ -8,10 +8,10 @@
         - order.errors.each do |error|
           %li= error.full_message
   %div.form-group.field.w-25
-    = form.label :id_usuario, style: "display: block", required: true
+    = form.label :user_id, "ID de usuario", style: "display: block", required: true
     = form.text_field :user_id, class: "form-control"
   %div.form-group.field.w-25
-    = form.label :estado, style: "display: block", required: true
+    = form.label :state, "Estado", style: "display: block", required: true
     = form.text_field :state, class: "form-control"
   %div
     = form.submit :Guardar, class: 'btn btn-primary'
