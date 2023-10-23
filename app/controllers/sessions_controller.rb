@@ -23,15 +23,6 @@ class SessionsController < ApplicationController
         redirect_to root_path, notice: "Logged out"
     end
 
-    # <a data-action="click->password-toggle#password" class="password-field-icon-1 far fa-eye-slash"></a>
-
-    #GET /password
-    def password
-        flash[:alert] = "Funciona"
-        redirect_to sessions_path
-    end
-
-
   # def forgot_password
   #   @user = User.find_by_email(params[:email])
   #   random_password = Array.new(10).map { (65 + rand(58)).chr }.join
