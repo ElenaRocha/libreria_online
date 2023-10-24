@@ -91,3 +91,6 @@ gem 'ransack'
 
 #para paginar
 gem 'pagy'
+
+#jQuery
+gem 'jquery-rails'

@@ -2,18 +2,14 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("Hello World!");
-// });
+//= require jquery
+//= require jquery_ujs
 
-// window.addEventListener("load", () => {
-//   console.log("Hello World!");
-// })
-
-
-// $(".toggle-password").on('click',function() 
-// {if ($(".password").attr('type') === 'password') {$(".password").attr('type', 'text');
-// } else {
-// $(".password").attr('type', 'password');
-// }
-// });
+// $(document).ready()
+//   $(".toggle-password").on('click',function() {
+//     if ($(".password").attr('type') === 'password') {
+//       $(".password").attr('type', 'text');
+//     } else {
+//       $(".password").attr('type', 'password');
+//     }
+//   });

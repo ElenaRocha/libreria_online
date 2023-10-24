@@ -13,9 +13,10 @@
     = link_to "Registrarse", new_user_path, class: "btn btn-link my-2 my-lg-0"
 
 :javascript
-  $(".toggle-password").on('click',function() 
-  {if ($(".password").attr('type') === 'password') {$(".password").attr('type', 'text');
-  } else {
-  $(".password").attr('type', 'password');
-  }
+  $(".toggle-password").on('click',function() {
+    if ($(".password").attr('type') === 'password') {
+      $(".password").attr('type', 'text');
+    } else {
+      $(".password").attr('type', 'password');
+    }
   });

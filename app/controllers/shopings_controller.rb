@@ -28,7 +28,6 @@ class ShopingsController < ApplicationController
     ActiveRecord::Base.connection.exec_query("DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = #{params[:order_id]} AND `books_orders`.`book_id` = #{params[:book_id]} LIMIT 1")
     respond_to do |format|
       format.js
-      # format.js {render}
     end
     # redirect_to order_path(:id => params[:order_id])
   end

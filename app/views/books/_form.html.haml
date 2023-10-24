@@ -16,6 +16,14 @@
   %div.form-group.field.w-25
     = form.label :author_id, "ID del autor", style: "display: block", required: true
     = form.text_field :author_id, class: "form-control"
+    -# Author.where("name = ?", params[:author_id])
+
+    -# Author.find!_by name: params[:author_id]
+    -# ActiveRecord::RecordNotFound
+
+    -# Author.find_or_create_by(name: params[:author_id])
+
+    -# <%= f.hidden_field :author_id, id: 'author_id' %>
   %div.form-group.field
     = form.label :genre_ids, "Géneros", style: "display: block"
     = form.collection_check_boxes :genre_ids, @genres, :id, :definition do |b|
