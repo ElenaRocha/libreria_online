@@ -17,7 +17,8 @@
     = javascript_importmap_tags
   
   %body
-    = render partial: "shared/navbar"
-    .container
+    %header
+      = render partial: "shared/navbar"
+    %main.container
       = render partial: "shared/flash"
       = yield

@@ -2,6 +2,15 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   console.log("Hello World!");
+// });
+
+// window.addEventListener("load", () => {
+//   console.log("Hello World!");
+// })
+
+
 // $(".toggle-password").on('click',function() 
 // {if ($(".password").attr('type') === 'password') {$(".password").attr('type', 'text');
 // } else {
