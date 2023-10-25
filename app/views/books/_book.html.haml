@@ -1,5 +1,6 @@
 %div{:id => "#{dom_id book}"}
   %p
+    -# = image_tag (book.image.url, size: "400x400", alt: book.title) if book.image?
     = image_tag book.image.url, size: "400x400", alt: book.title
   %p
     %strong Título:

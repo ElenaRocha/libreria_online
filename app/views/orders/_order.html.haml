@@ -1,10 +1,11 @@
 %div{:id => "#{dom_id order}"}
-  %p
-    %strong Usuario:
-    = order.user_id
-  %p
-    %strong Estado:
-    = order.state
+  - if Current.user.present? && Current.user.role == "admin"
+    %p
+      %strong Usuario:
+      = order.user_id
+    %p
+      %strong Estado:
+      = order.state
   %p
     %strong Libros: 
     - order.books.each do |book|
@@ -12,6 +13,10 @@
       - if order.state == "activo"
         = button_to "Eliminar", shoping_path(:order_id => order, :book_id => book), method: :delete, remote: true, class: "btn btn-link my-2 my-lg-0 d-inline" 
       %br/
+    - if order.state == "finalizado"
+      %p
+        %strong Fecha de compra: 
+        =order.updated_at.strftime("%m/%d/%Y")
   %p
     %strong Importe: 
     - @totalsum = order.books.map { |book| book.price }.sum

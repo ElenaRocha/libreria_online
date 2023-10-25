@@ -19,4 +19,14 @@ class Book < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["author"]
   end
+
+  #active record callback
+  before_validation do
+    @author = Author.find_or_create_by(name: author_id)
+    puts "el nombre que estoy buscando #{author_id}"
+    puts "¿me encuentra al autor? #{@author.id}"
+    # no recnoce strings
+    # no se materializa el insert de un autor nuevo
+  end
+
 end

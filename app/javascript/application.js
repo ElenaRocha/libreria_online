@@ -4,12 +4,3 @@ import "controllers"
 
 //= require jquery
 //= require jquery_ujs
-
-// $(document).ready()
-//   $(".toggle-password").on('click',function() {
-//     if ($(".password").attr('type') === 'password') {
-//       $(".password").attr('type', 'text');
-//     } else {
-//       $(".password").attr('type', 'password');
-//     }
-//   });
