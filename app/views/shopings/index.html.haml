@@ -1,8 +1,6 @@
 %h1 Pedido activo
 %div#orders.container
   =render @order
-  - if @order.state == "activo"
-    = button_to "Finalizar pedido", {:controller => "shopings", :action => "finish", :id => @order.id }
 %div
   = link_to "Ver pedidos", shoping_path
   |

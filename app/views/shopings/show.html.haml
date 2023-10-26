@@ -7,6 +7,3 @@
     - @order.each do |order|
       .col
         = render order
-        %div
-        - if order.state == "activo"
-          = button_to "Finalizar pedido", {:controller => "shopings", :action => "finish", :id => order.id }

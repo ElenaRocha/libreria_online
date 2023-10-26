@@ -31,7 +31,7 @@
         %i.bi.bi-eye-fill
       = button_to edit_book_path(book), method: :get, class: "btn btn-primary m-1" do 
         %i.bi.bi-pencil-fill
-      = button_to book, method: :delete, class: "btn btn-primary m-1" do
+      = button_to book_path(book,format: :js), method: :delete, remote: true, class: "btn btn-primary m-1" do
         %i.bi.bi-trash-fill
     - else
       = link_to "Añadir al carro", {:controller => "shopings", :action => "index", :id => book.id}, class: "btn btn-primary m-1"
