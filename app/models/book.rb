@@ -21,11 +21,11 @@ class Book < ApplicationRecord
   end
 
   #active record callback
-  before_validation do
+  before_create do
     @author = Author.find_or_create_by(name: author_id)
     puts "el nombre que estoy buscando #{author_id}"
     puts "¿me encuentra al autor? #{@author.id}"
-    # no recnoce strings
+    # no recnoce strings?
     # no se materializa el insert de un autor nuevo
   end
 

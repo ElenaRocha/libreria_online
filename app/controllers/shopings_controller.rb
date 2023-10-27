@@ -26,6 +26,8 @@ class ShopingsController < ApplicationController
   # DELETE /shoping
   def destroy
     ActiveRecord::Base.connection.exec_query("DELETE FROM `books_orders` WHERE `books_orders`.`order_id` = #{params[:order_id]} AND `books_orders`.`book_id` = #{params[:book_id]} LIMIT 1")
+    # @author.books.delete(@book1)
+    # cart.cart_products.where(product_id: 1).first.delete
 
     redirect_to order_path(:id => params[:order_id])
   end
