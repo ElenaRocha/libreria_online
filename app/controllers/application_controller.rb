@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
   before_action :set_query
   before_action :set_genres
+  before_action :set_authors
 
     def set_current_user
         if session[:user_id]
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
 
     def set_genres
         @genres = Genre.all
+    end
+
+    def set_authors
+        @authors = Author.all
     end
 end
